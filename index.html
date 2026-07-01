@@ -5,77 +5,108 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VtubeLab</title>
     <link rel="stylesheet" href="./style.css">
-    <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Poppins:ital,wght@0,500;0,600;0,700;1,500;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div id="preloader" class="preloader">
+        <img class="preloader__logo" src="./assets/images/logo.svg" alt="">
+    </div>
+    <div class="aurora" aria-hidden="true">
+        <div class="aurora__blob aurora__blob--1"></div>
+        <div class="aurora__blob aurora__blob--2"></div>
+        <div class="aurora__blob aurora__blob--3"></div>
+    </div>
     <div class="body_container">
         <header class="header">
-                <div class="item__container logo__container"><a class="logo__text nav__link" href="index.html"><img class="logo" src="./assets/images/logo.svg" width="25" alt=""><b>Vtubelab</b></a></div>
-                <div class="item__container catalog"><a class="nav__link" href="catalog.html"><b>Catalog</b></a></div>
-                <div class="item__container gallery"><a class="nav__link" href="gallery.html"><b>Gallery</b></a></div>
-                <div class="item__container basket"><a class="nav__link" href="basket.html"><img class="basket__logo" src="assets/images/basket.svg" alt=""></a></div>
+            <div class="header__inner">
+                <a class="logo__text" href="index.html" data-page-link>Vtubelab</a>
+                <nav class="header__nav">
+                    <a class="nav__link" href="catalog.html" data-page-link>Каталог</a>
+                    <a class="nav__link" href="team.html" data-page-link>Команда</a>
+                    <a class="nav__link" href="gallery.html" data-page-link>Галерея</a>
+                </nav>
+                <a class="nav__link basket__link" href="basket.html" data-page-link>
+                    <svg class="basket__logo" width="20" height="20" viewBox="0 0 38 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M17.4374 32.0625C17.4374 33.7917 16.0416 35.1875 14.3124 35.1875C12.5833 35.1875 11.1874 33.7917 11.1874 32.0625C11.1874 30.3333 12.5833 28.9375 14.3124 28.9375C16.0416 28.9375 17.4374 30.3333 17.4374 32.0625ZM30.9791 32.0625C30.9791 33.7917 29.5833 35.1875 27.8541 35.1875C26.1249 35.1875 24.7291 33.7917 24.7291 32.0625C24.7291 30.3333 26.1249 28.9375 27.8541 28.9375C29.5833 28.9375 30.9791 30.3333 30.9791 32.0625ZM37.1874 9L33.0207 25.6667C32.9368 26.0063 32.7413 26.3079 32.4655 26.5232C32.1898 26.7385 31.8498 26.8551 31.4999 26.8542H10.6666C9.91658 26.8542 9.27075 26.3125 9.12492 25.5625L5.18742 3.9375H2.33325C1.47909 3.9375 0.770752 3.22917 0.770752 2.375C0.770752 1.52083 1.47909 0.8125 2.33325 0.8125H6.49992C7.24992 0.8125 7.89575 1.35417 8.04158 2.10417L8.93742 7.0625H35.6666C35.9035 7.0635 36.1371 7.11807 36.35 7.22213C36.5628 7.32619 36.7493 7.47705 36.8956 7.66341C37.0419 7.84977 37.1441 8.06681 37.1947 8.29827C37.2452 8.52973 37.2427 8.76963 37.1874 9ZM33.6666 10.1875H21.5833H9.49992L11.9583 23.7292H21.1145H30.2708L33.6458 10.1875H33.6666Z" fill="currentColor"/>
+                    </svg>
+                </a>
+            </div>
         </header>
-        <main class="animate__animated ">
-            <div class="intro">
-                <div class="intro__container">
-                    <h2 class="intro__subtitle">Welcome To The</h2>
-                    <h1 class="intro__title">Vtubelab</h1>
+        <main class="slides" id="slides">
+            <section class="slide" data-slide>
+                <div class="intro">
+                    <div class="intro__container">
+                        <h2 class="intro__subtitle">Welcome To The</h2>
+                        <h1 class="intro__title"><span class="title-outline">Vtube</span><span class="title-solid">Lab</span></h1>
+                        <p class="intro__tagline">Создаём виртуальных персонажей — от концепта до готовой модели для стрима.</p>
+                        <div class="intro__actions">
+                            <a class="intro__cta" href="#" data-slide-target="1">Посмотреть команду</a>
+                            <a class="intro__cta" href="catalog.html" data-page-link>Перейти в каталог</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </main>
-        <div class="content__container animate__animated ">
-            <div class="background">
-                <video autoplay muted loop class="video-background">
-                    <source src="assets/images/background-video.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-                </video>
-            </div>
-            <div class="background-shadow"></div>
-            <div class="text-box">
-                <h3>Кто же мы такие?</h3>
-                <p>Мы - маленькая, но продвигающаяся команда художников, дизайнеров и других специалистов в сфере витубинга! Мы предлагаем вам полный спектр услуг по созданию и продвижению вашего виртуального персонажа. Вы сами можете выбрать внешний вид и стиль вашего виртуального ютубера, а также дизайнов ваших сцен, или довериться нашим профессиональным дизайнерам и сценаристам. Мы обеспечим вам высококачественную анимацию, изумительный и неповторимый дизайн. Виртуальные ютуберы - это не просто персонажи, это ваше творческое выражение, ваше альтернативное “я”, ваш способ донести свои идеи и эмоции до миллионов зрителей по всему миру!</p>
-            </div>
-        </div>
-        <div class="stickers animate__animated ">
-            <div class="stickers__images">
-                <img class="stickers__image sticker1" src="./assets/images/sticker1.png" alt="" data-tilt data-tilt-scale="1.5" data-tilt-reverse="true">
-                <img class="stickers__image sticker2" src="./assets/images/sticker2.png" alt="" data-tilt data-tilt-scale="1.5" data-tilt-reverse="true">
-                <img class="stickers__image sticker3" src="./assets/images/sticker3.png" alt="" data-tilt data-tilt-scale="1.5" data-tilt-reverse="true">
-            </div>
-            <div class="stickers__text">
-                <p>Уникальный дизайн и креативные идеи подчеркнут вашу индивидуальность. Поднимите уровень вашей заметности с нашими стикерами!</p>
-            </div>
-        </div>
-        <div class="overlays animate__animated ">
-            <div class="overlays__text">
-                <p>Создание уникальных концепт-артов, оверлеев и фонов – вот что делает компанию особенной. Развивайте свою креативность с нашими дизайнерскими работами!</p>
-            </div>
-            <div class="overlays__images" data-tilt data-tilt-scale="1.2" data-tilt-reverse="true">
-                <img class="overlays__image overlay1" src="./assets/images/overlay1.jpg" alt="">
-                <img class="overlays__image overlay2" src="./assets/images/overlay2.jpg" alt="">
-                <img class="overlays__image overlay3" src="./assets/images/overlay3.jpg" alt="">
-            </div>
-        </div>
-        <div class="links__container animate__animated ">
-            <div class="gallery-link__animation">
-                <a class="gallery-link__container" href="./gallery.html">
-                    <h1>Хотите взглянуть на работы?<br>Загляните в галерею!</h1> 
-                    <svg class="links-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 511.893 511.893" xml:space="preserve">
-                        <path d="M476.84,248.107L233.64,3.2c-2.027-2.027-4.693-3.2-7.573-3.2H42.6c-5.867,0-10.667,4.8-10.667,10.667 c0,2.88,1.173,5.547,3.093,7.573l237.76,237.44L35.24,493.76c-4.16,4.16-4.16,10.88,0,15.04c2.027,2.027,4.693,3.093,7.573,3.093 H226.28c2.88,0,5.547-1.173,7.573-3.2L476.84,263.04C481,258.987,481,252.267,476.84,248.107z M221.8,490.667H68.52 l226.987-227.52c4.16-4.16,4.16-10.88,0-15.04L68.413,21.333h153.28l232.64,234.347L221.8,490.667z"/>
-                    </svg>
-                </a>
-            </div>
-            <div class="catalog-link__animation">
-                <a class="catalog-link__container" href="./catalog.html">
-                    <svg class="links-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" xml:space="preserve">
-                        <path d="M476.92,493.76L240.333,256.32L476.707,18.24c4.16-4.16,4.16-10.88,0-15.04C474.68,1.067,472.013,0,469.24,0H286.627 c-2.88,0-5.547,1.173-7.573,3.2L35.107,248.853c-4.16,4.16-4.16,10.88,0,15.04l244.16,245.013 c2.027,2.027,4.693,3.093,7.573,3.093h182.507c5.867,0,10.667-4.8,10.667-10.667C480.013,498.56,478.947,495.787,476.92,493.76z M291.213,490.667L57.72,256.32L291,21.333h152.533L217.72,248.853c-4.16,4.16-4.16,10.88,0,15.04l225.92,226.773H291.213z"/>
-                    </svg>
-                    <h1>Уже знакомы с услугами?<br>Мы ждём вас в каталоге!</h1>
-                </a>
-            </div>
-        </div>
-            <footer class="animate__animated ">
+            </section>
+            <section class="slide" data-slide>
+                <div class="content__container">
+                    <div class="background">
+                        <video autoplay muted loop class="video-background">
+                            <source src="assets/images/background-video.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="background-shadow"></div>
+                    <div class="text-box">
+                        <h3>Кто же мы такие?</h3>
+                        <p>Мы - маленькая, но продвигающаяся команда художников, дизайнеров и других специалистов в сфере витубинга! Мы предлагаем вам полный спектр услуг по созданию и продвижению вашего виртуального персонажа. Вы сами можете выбрать внешний вид и стиль вашего виртуального ютубера, а также дизайнов ваших сцен, или довериться нашим профессиональным дизайнерам и сценаристам. Мы обеспечим вам высококачественную анимацию, изумительный и неповторимый дизайн. Виртуальные ютуберы - это не просто персонажи, это ваше творческое выражение, ваше альтернативное “я”, ваш способ донести свои идеи и эмоции до миллионов зрителей по всему миру!</p>
+                    </div>
+                </div>
+            </section>
+            <section class="slide" data-slide>
+                <div class="stickers">
+                    <div class="stickers__images">
+                        <img class="stickers__image sticker1" src="./assets/images/sticker1.png" alt="" data-tilt data-tilt-scale="1.5" data-tilt-reverse="true">
+                        <img class="stickers__image sticker2" src="./assets/images/sticker2.png" alt="" data-tilt data-tilt-scale="1.5" data-tilt-reverse="true">
+                        <img class="stickers__image sticker3" src="./assets/images/sticker3.png" alt="" data-tilt data-tilt-scale="1.5" data-tilt-reverse="true">
+                    </div>
+                    <div class="stickers__text">
+                        <p>Уникальный дизайн и креативные идеи подчеркнут вашу индивидуальность. Поднимите уровень вашей заметности с нашими стикерами!</p>
+                    </div>
+                </div>
+            </section>
+            <section class="slide" data-slide>
+                <div class="overlays">
+                    <div class="overlays__text">
+                        <p>Создание уникальных концепт-артов, оверлеев и фонов – вот что делает компанию особенной. Развивайте свою креативность с нашими дизайнерскими работами!</p>
+                    </div>
+                    <div class="overlays__images" data-tilt data-tilt-scale="1.2" data-tilt-reverse="true">
+                        <img class="overlays__image overlay1" src="./assets/images/overlay1.jpg" alt="">
+                        <img class="overlays__image overlay2" src="./assets/images/overlay2.jpg" alt="">
+                        <img class="overlays__image overlay3" src="./assets/images/overlay3.jpg" alt="">
+                    </div>
+                </div>
+            </section>
+            <section class="slide" data-slide>
+                <div class="links__container">
+                    <div class="gallery-link__animation">
+                        <a class="gallery-link__container" href="./gallery.html">
+                            <h1>Хотите взглянуть на работы?<br>Загляните в галерею!</h1>
+                            <svg class="links-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 511.893 511.893" xml:space="preserve">
+                                <path d="M476.84,248.107L233.64,3.2c-2.027-2.027-4.693-3.2-7.573-3.2H42.6c-5.867,0-10.667,4.8-10.667,10.667 c0,2.88,1.173,5.547,3.093,7.573l237.76,237.44L35.24,493.76c-4.16,4.16-4.16,10.88,0,15.04c2.027,2.027,4.693,3.093,7.573,3.093 H226.28c2.88,0,5.547-1.173,7.573-3.2L476.84,263.04C481,258.987,481,252.267,476.84,248.107z M221.8,490.667H68.52 l226.987-227.52c4.16-4.16,4.16-10.88,0-15.04L68.413,21.333h153.28l232.64,234.347L221.8,490.667z"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="catalog-link__animation">
+                        <a class="catalog-link__container" href="./catalog.html">
+                            <svg class="links-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" xml:space="preserve">
+                                <path d="M476.92,493.76L240.333,256.32L476.707,18.24c4.16-4.16,4.16-10.88,0-15.04C474.68,1.067,472.013,0,469.24,0H286.627 c-2.88,0-5.547,1.173-7.573,3.2L35.107,248.853c-4.16,4.16-4.16,10.88,0,15.04l244.16,245.013 c2.027,2.027,4.693,3.093,7.573,3.093h182.507c5.867,0,10.667-4.8,10.667-10.667C480.013,498.56,478.947,495.787,476.92,493.76z M291.213,490.667L57.72,256.32L291,21.333h152.533L217.72,248.853c-4.16,4.16-4.16,10.88,0,15.04l225.92,226.773H291.213z"/>
+                            </svg>
+                            <h1>Уже знакомы с услугами?<br>Мы ждём вас в каталоге!</h1>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <section class="slide" data-slide>
+              <footer>
                 <div class="contacts__button"></div>
                 <div class="footer-link__container">
                     <div class="footer-link">
@@ -114,17 +145,20 @@
                         </a>
                     </div>
                 </div>
-            </footer>
-            <div class="copyright">© 2023-2024. Все права защищены. Копирование и использование материалов из сайта запрещено!</div>
+              </footer>
+            </section>
+        </main>
+        <div class="copyright">© 2023-2026. Все права защищены. Копирование и использование материалов из сайта запрещено!</div>
+        <nav class="slide-dots" id="slideDots" aria-hidden="true"></nav>
+        <div class="scroll-hint" id="scrollHint" aria-hidden="true">
+            <span>Прокрутите вниз</span>
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M6 9L12 15L18 9" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
         </div>
-    <script src="./assets/scripts/animation.js"></script>
-    <script src="./assets/scripts/slider.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
-    <script src="./assets/scripts/animation.js"></script>     
-    <style>
-        .animate__animated {
-            opacity: 0;
-        }
-    </style>
+    </div>
+    <script src="./assets/scripts/tilt.js"></script>
+    <script src="./assets/scripts/slides.js"></script>
+    <script src="./assets/scripts/transitions.js"></script>
 </body>
 </html>

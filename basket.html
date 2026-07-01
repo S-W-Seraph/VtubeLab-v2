@@ -4,18 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Basket</title>
-    <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+  <div id="preloader" class="preloader">
+      <img class="preloader__logo" src="./assets/images/logo.svg" alt="">
+  </div>
+  <div class="aurora" aria-hidden="true">
+      <div class="aurora__blob aurora__blob--1"></div>
+      <div class="aurora__blob aurora__blob--2"></div>
+      <div class="aurora__blob aurora__blob--3"></div>
+  </div>
   <header class="header">
-    <div class="item__container logo__container"><a class="logo__text nav__link" href="index.html"><img class="logo" src="./assets/images/logo.svg" width="25" alt=""><b>Vtubelab</b></a></div>
-    <div class="item__container catalog"><a class="nav__link" href="catalog.html"><b>Catalog</b></a></div>
-    <div class="item__container gallery"><a class="nav__link" href="gallery.html"><b>Gallery</b></a></div>
-    <div class="item__container basket"><a class="nav__link" href="basket.html"><img class="basket__logo" src="assets/images/basket.svg" alt=""></a></div>
+    <div class="header__inner">
+        <a class="logo__text" href="index.html" data-page-link>Vtubelab</a>
+        <nav class="header__nav">
+            <a class="nav__link" href="catalog.html" data-page-link>Каталог</a>
+            <a class="nav__link" href="team.html" data-page-link>Команда</a>
+            <a class="nav__link" href="gallery.html" data-page-link>Галерея</a>
+        </nav>
+        <a class="nav__link basket__link" href="basket.html" data-page-link>
+            <svg class="basket__logo" width="20" height="20" viewBox="0 0 38 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M17.4374 32.0625C17.4374 33.7917 16.0416 35.1875 14.3124 35.1875C12.5833 35.1875 11.1874 33.7917 11.1874 32.0625C11.1874 30.3333 12.5833 28.9375 14.3124 28.9375C16.0416 28.9375 17.4374 30.3333 17.4374 32.0625ZM30.9791 32.0625C30.9791 33.7917 29.5833 35.1875 27.8541 35.1875C26.1249 35.1875 24.7291 33.7917 24.7291 32.0625C24.7291 30.3333 26.1249 28.9375 27.8541 28.9375C29.5833 28.9375 30.9791 30.3333 30.9791 32.0625ZM37.1874 9L33.0207 25.6667C32.9368 26.0063 32.7413 26.3079 32.4655 26.5232C32.1898 26.7385 31.8498 26.8551 31.4999 26.8542H10.6666C9.91658 26.8542 9.27075 26.3125 9.12492 25.5625L5.18742 3.9375H2.33325C1.47909 3.9375 0.770752 3.22917 0.770752 2.375C0.770752 1.52083 1.47909 0.8125 2.33325 0.8125H6.49992C7.24992 0.8125 7.89575 1.35417 8.04158 2.10417L8.93742 7.0625H35.6666C35.9035 7.0635 36.1371 7.11807 36.35 7.22213C36.5628 7.32619 36.7493 7.47705 36.8956 7.66341C37.0419 7.84977 37.1441 8.06681 37.1947 8.29827C37.2452 8.52973 37.2427 8.76963 37.1874 9ZM33.6666 10.1875H21.5833H9.49992L11.9583 23.7292H21.1145H30.2708L33.6458 10.1875H33.6666Z" fill="currentColor"/>
+            </svg>
+        </a>
+    </div>
   </header>
-  <div class="cart-container animate__animated">
+  <div class="cart-container">
     <h2 class="cart-title">Cart</h2>
     <div class="amount-title">
       <div class="cart-product"><strong>Продукт</strong></div>
@@ -44,7 +60,7 @@
 
 
   <!-- Оплата -->
-  <div id="payment-popup" class="popup animate__animated animate__fadeIn">
+  <div id="payment-popup" class="popup">
     <div class="popup-content">
         <span class="close-button" onclick="closePaymentPopup()">&times;</span>
         <h2>Оплата</h2>
@@ -60,7 +76,7 @@
 
 
     <!-- Подтверждение покупки -->
-    <div id="confirmation-popup" class="popup animate__animated animate__fadeIn">
+    <div id="confirmation-popup" class="popup">
       <div class="popup-content">
           <span class="close-button" onclick="closeConfirmationPopup()">&times;</span>
           <h2>Спасибо за покупку!</h2>
@@ -73,57 +89,6 @@
   </div>
   
   <script src="./assets/scripts/basket.js"></script>
-  <script>
-    function animateAndNavigate(event, url, animation) {
-        event.preventDefault(); // Prevent the default link behavior
-
-        const elements = document.querySelectorAll('.animate__animated:not(.header)');
-        let delay = 0;
-
-        elements.forEach((element) => {
-            setTimeout(() => {
-                element.classList.remove('animate__fadeInDown');
-                element.classList.add(animation);
-                element.style.opacity = 1;
-            }, delay);
-            delay += 100;
-        });
-
-        setTimeout(() => {
-            window.location.href = url;
-        }, delay + 500);
-    }
-
-    document.addEventListener("DOMContentLoaded", () => {
-        const elements = document.querySelectorAll('.animate__animated');
-        let delay = 0;
-
-        elements.forEach((element) => {
-            if (element.classList.contains('header')) {
-                element.classList.add('animate__fadeInUp');
-                element.style.opacity = 1;
-            } else {
-                setTimeout(() => {
-                    element.classList.add('animate__fadeInUp');
-                    element.style.opacity = 1;
-                }, delay);
-                delay += 500;
-            }
-        });
-
-        // Add event listeners to the links
-        document.querySelector('a[href="index.html"]').addEventListener('click', function(event) {
-            animateAndNavigate(event, 'index.html', 'animate__fadeOutDown');
-        });
-
-        document.querySelector('a[href="catalog.html"]').addEventListener('click', function(event) {
-            animateAndNavigate(event, 'catalog.html', 'animate__fadeOutDown');
-        });
-
-        document.querySelector('a[href="gallery.html"]').addEventListener('click', function(event) {
-            animateAndNavigate(event, 'gallery.html', 'animate__fadeOutDown');
-        });
-    });
-</script>
+  <script src="./assets/scripts/transitions.js"></script>
 </body>
 </html>
